@@ -18,13 +18,15 @@ class UserDAO:
         return ent
 
     def delete(self, rid):
-        genre = self.get_one(rid)
-        self.session.delete(genre)
+        user = self.get_one(rid)
+        self.session.delete(user)
         self.session.commit()
 
     def update(self, user_d):
-        genre = self.get_one(user_d.get("id"))
-        genre.name = user_d.get("name")
+        user = self.get_one(user_d.get("id"))
+        user.username = user_d.get("username")
+        user.password = user_d.get("password")
+        user.role = user_d.get("role")
 
-        self.session.add(genre)
+        self.session.add(user)
         self.session.commit()

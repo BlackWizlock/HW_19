@@ -1,3 +1,6 @@
+# END-POINT: movies
+# Methods: GET, POST, GET{bid}, PUT{bid}, DELETE{bid}
+
 from flask import request
 from flask_restx import Resource, Namespace
 

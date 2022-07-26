@@ -1,3 +1,6 @@
+# END-POINT: genres
+# Methods: GET, GET{rid}
+
 from flask_restx import Resource, Namespace
 
 from dao.model.genre import GenreSchema
