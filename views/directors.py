@@ -1,5 +1,5 @@
 # END-POINT: directors
-# Methods: GET, GET{rid}
+# Methods: GET, GET{did}
 from flask import request
 from flask_restx import Resource, Namespace
 
@@ -22,10 +22,10 @@ class DirectorsView(Resource):
         return "", 201, {"location": f"/directors/{director.id}"}
 
 
-@director_ns.route('/<int:rid>')
+@director_ns.route('/<int:did>')
 class DirectorView(Resource):
-    def get(self, rid):
-        r = director_service.get_one(rid)
+    def get(self, did):
+        r = director_service.get_one(did)
         sm_d = DirectorSchema().dump(r)
         return sm_d, 200
 

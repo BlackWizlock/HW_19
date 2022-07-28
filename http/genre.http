@@ -1,0 +1,42 @@
+POST http://127.0.0.1:10001/genres/
+Content-Type: application/json
+
+{
+  "name": "Новости"
+}
+
+###
+
+GET http://127.0.0.1:10001/genres/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/genres/19
+Accept: application/json
+
+###
+
+PUT http://127.0.0.1:10001/genres/19
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Новости 24"
+}
+###
+
+DELETE http://127.0.0.1:10001/genres/20
+Accept: application/json
+
+###
+
+PATCH http://127.0.0.1:10001/genres/19
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "STRASHNO"
+}
+
+###

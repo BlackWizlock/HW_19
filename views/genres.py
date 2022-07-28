@@ -29,13 +29,13 @@ class GenreView(Resource):
         sm_d = GenreSchema().dump(r)
         return sm_d, 200
 
-    def put(self, gid):
+    def put(self, rid):
         req_json = request.json
         if "id" not in req_json:
-            req_json["id"] = gid
+            req_json["id"] = rid
         genre_service.update(req_json)
         return "", 204
 
-    def delete(self, gid):
-        genre_service.delete(gid)
+    def delete(self, rid):
+        genre_service.delete(rid)
         return "", 204
