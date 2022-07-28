@@ -8,6 +8,9 @@ class UserDAO:
     def get_one(self, bid):
         return self.session.query(User).get(bid)
 
+    def get_by_name(self, name):
+        return self.session.query(User).filter(User.username == name).first()
+
     def get_all(self):
         return self.session.query(User).all()
 

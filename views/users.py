@@ -4,6 +4,7 @@ from flask import request
 from flask_restx import Resource, Namespace
 
 from dao.model.user import UserSchema
+from helper import admin_required
 from implemented import user_service
 
 user_ns = Namespace('users')
@@ -34,4 +35,9 @@ class UserView(Resource):
         if "id" not in req_json:
             req_json["id"] = rid
         user_service.update(req_json)
+        return "", 204
+
+    @admin_required
+    def delete(self, rid):
+        user_service.delete(rid)
         return "", 204

@@ -1,0 +1,20 @@
+GET http://127.0.0.1:10001/users/1
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:10001/users/
+Accept: application/json
+Content-Type: application/json; charset=utf-8
+
+{
+  "username": "Art",
+  "password": "password",
+  "role": "user"
+}
+
+###
+
+DELETE http://127.0.0.1:10001/users/1
+Content-Type: application/json; charset=utf-8
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IkFydCIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjU5MDIyOTE4fQ.qM_8Tw9Q2GFczENGgz-59vzIChU5zoCcVVXbZh8amvM

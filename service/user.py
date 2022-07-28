@@ -10,21 +10,26 @@ class UserService:
     def __init__(self, dao: UserDAO):
         self.dao = dao
 
-    def get_one(self, bid):
-        return self.dao.get_one(bid)
+    def get_one(self, uid):
+        return self.dao.get_one(uid)
 
     def get_all(self):
         return self.dao.get_all()
 
-    def create(self, user_d):
-        return self.dao.create(user_d)
+    def get_by_name(self, name):
+        return self.dao.get_by_name(name)
 
-    def update(self, user_d):
-        self.dao.update(user_d)
+    def create(self, uid):
+        uid['password'] = self.make_user_password_hash(uid['password'])
+        return self.dao.create(uid)
+
+    def update(self, uid):
+        uid['password'] = self.make_user_password_hash(uid['password'])
+        self.dao.update(uid)
         return self.dao
 
-    def delete(self, rid):
-        self.dao.delete(rid)
+    def delete(self, uid):
+        self.dao.delete(uid)
 
     def make_user_password_hash(self, password: str):
         return base64.b64encode(hashlib.pbkdf2_hmac(
