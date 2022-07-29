@@ -6,3 +6,5 @@ class Config(object):
     PWD_HASH_ITERATIONS = 100_000
     SECRET_HERE = '249y823r9v8238r9u'
     ALGORITH = 'HS256'
+    RESTX_JSON = {'ensure_ascii': False}
+    JSON_AS_ASCII = False
