@@ -9,6 +9,7 @@ Content-Type: application/json
 
 GET http://127.0.0.1:10001/genres/
 Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IkFydCIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNjU5MTAxNzM0fQ.o4GL3rpxrocly7-GqAh1oqAxzdiU09ckT4jW1hurq1c
 
 ###
 
